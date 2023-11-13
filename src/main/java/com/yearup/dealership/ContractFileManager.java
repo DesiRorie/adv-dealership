@@ -70,7 +70,7 @@ public class ContractFileManager {
             BufferedReader bufferedReader2 = new BufferedReader(new FileReader("src/main/resources/contracts.csv"));
             BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter("src/main/resources/contracts.csv", true));
 //            Type of contract | date | customer name | email | VIN | year of car | Model | Make | Vehicle Type | odometer | price| sales Tax | recording Fee | processingFee | isFinancing| Monthly Payment | ending total;
-            bufferedWriter2.write(contract.contractType + "|" + contract.date + "|" + contract.customerName + "|" + contract.customerEmail + "|" + contract.vehicleSold + "|" + String.format("%.2f", contract.totalPrice) + "|" + String.format("%.2f", contract.salesTaxAmount) + "|" + String.format("%.2f", contract.recordingFee) + "|" + String.format("%.2f", contract.processingFee) + "|" + Boolean.toString(contract.isFinancing) + "|" + String.format("%.2f", contract.monthlyPayment) + "|" + String.format("%.2f", contract.endingTotal));
+            bufferedWriter2.write(contract.contractType + "|" + contract.getDate() + "|" + contract.getCustomerName()+ "|" + contract.getCustomerEmail() + "|" + contract.vehicleSold + "|" + String.format("%.2f", contract.totalPrice) + "|" + String.format("%.2f", contract.salesTaxAmount) + "|" + String.format("%.2f", contract.recordingFee) + "|" + String.format("%.2f", contract.processingFee) + "|" + Boolean.toString(contract.isFinancing) + "|" + String.format("%.2f", contract.monthlyPayment) + "|" + String.format("%.2f", contract.endingTotal));
             bufferedWriter2.newLine();
             bufferedWriter2.close();
         } catch (Exception e) {
@@ -89,7 +89,7 @@ public class ContractFileManager {
             BufferedReader bufferedReader2 = new BufferedReader(new FileReader("src/main/resources/contracts.csv"));
             BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter("src/main/resources/contracts.csv",true));
 //            Type of contract | date | customer name | email | VIN | year of car | Model | Make | Vehicle Type | odometer | price| sales Tax | recording Fee | processingFee | isFinancing| Monthly Payment | ending total;
-            bufferedWriter2.write(contract.contractType + "|" + contract.date+ "|"  + contract.customerName + "|" + contract.customerEmail + "|" +contract.vehicleSold + "|" + String.format("%.2f",contract.totalPrice) + "|" + contract.leaseFee + "|" + String.format("%.2f",contract.monthlyPayment) + "|" +  String.format("%.2f", contract.endTotalPrice));
+            bufferedWriter2.write(contract.contractType + "|" + contract.getDate()+ "|"  + contract.getCustomerName() + "|" + contract.getCustomerEmail() + "|" +contract.vehicleSold + "|" + String.format("%.2f",contract.totalPrice) + "|" + contract.leaseFee + "|" + String.format("%.2f",contract.monthlyPayment) + "|" +  String.format("%.2f", contract.endTotalPrice));
             bufferedWriter2.newLine();
             bufferedWriter2.close();
         }
